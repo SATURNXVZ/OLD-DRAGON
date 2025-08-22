@@ -1,6 +1,6 @@
 from geral import Personagem, dado
 
-def aventureiro():
+def aventureiro(): 
     print("\n" + "═" * 80)
     print("------ OLD DRAGON RPG (AVENTUREIRO) ------")
     print("═" * 80)
@@ -10,7 +10,7 @@ def aventureiro():
     nome = input("\nDigite um nome: ")
     classe = input("Digite a classe: ")
     
-    # Inicializando atributos
+    # Inicializa
     atributos = {
         'forca': None,
         'destreza': None,
@@ -24,12 +24,11 @@ def aventureiro():
     
     print("\nRolando atributos...")
     
-    # Loop para os 6 atributos
     while len(atributos_escolhidos) < 6:
         soma = dado()
-        print(f"\n🎲 Você tirou: {soma}")
+        print(f"\n Você tirou: {soma}")
         
-        # Mostrar opções disponíveis
+        # Mostra opção disponíveis
         print("\nAtributos disponíveis:")
         opcoes = []
         if atributos['forca'] is None:
@@ -56,7 +55,7 @@ def aventureiro():
                     print("ERRO! Digite um número entre 1 e 6!")
                     continue
                 
-                # Verificar se o atributo já foi escolhido
+                # Verifica se o atributo já foi esclhido
                 if esc == 1 and atributos['forca'] is not None:
                     print("Força já foi escolhida!")
                     continue
@@ -81,25 +80,25 @@ def aventureiro():
             except ValueError:
                 print("ERRO! Digite apenas números!")
         
-        # Atribuir valor ao atributo escolhido
+        # Atribui valor
         if esc == 1:
             atributos['forca'] = soma
-            print(f"✅ Força definida como: {soma}")
+            print(f" Força definida como: {soma}")
         elif esc == 2:
             atributos['destreza'] = soma
-            print(f"✅ Destreza definida como: {soma}")
+            print(f"Destreza definida como: {soma}")
         elif esc == 3:
             atributos['constituicao'] = soma
-            print(f"✅ Constituição definida como: {soma}")
+            print(f"Constituição definida como: {soma}")
         elif esc == 4:
             atributos['inteligencia'] = soma
-            print(f"✅ Inteligência definida como: {soma}")
+            print(f"Inteligência definida como: {soma}")
         elif esc == 5:
             atributos['sabedoria'] = soma
-            print(f"✅ Sabedoria definida como: {soma}")
+            print(f"Sabedoria definida como: {soma}")
         elif esc == 6:
             atributos['carisma'] = soma
-            print(f"✅ Carisma definida como: {soma}")
+            print(f"Carisma definida como: {soma}")
         
         atributos_escolhidos.append(esc)
     
@@ -117,7 +116,7 @@ def aventureiro():
     
     # Mostrando ficha
     print("\n" + "═" * 80)
-    print("🎉 PERSONAGEM CRIADO COM SUCESSO!")
+    print(" PERSONAGEM CRIADO COM SUCESSO!")
     personagem.printf()
     
     return personagem
