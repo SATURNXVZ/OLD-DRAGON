@@ -2,7 +2,7 @@ from geral import Personagem, dado
 
 """
 ATRIBUTOS:
-FOR = FORÇA; 
+FOR = FORÇA;  
 DES = DESTREZA;
 CON = CONSTITUIÇÃO;
 INT = INTELIGÊNCIA;
@@ -17,7 +17,7 @@ def classico():
     nome = input("\nDigite um nome: ")
     classe = input("Digite a classe: ") #CLASSE APENAS COMO DEMONSTRAÇÃO
     
-    # Rolando os atributos
+    #sorteia
     print("\nRolando atributos...")
     print("Força:")
     forca_val = dado()
@@ -32,7 +32,7 @@ def classico():
     print("Carisma:")
     car_val = dado()
     
-    # Criando personagem
+    #Criando personagem
     personagem = Personagem(
         nome=nome,
         classe=classe,
@@ -44,7 +44,7 @@ def classico():
         car=car_val
     )
     
-    # Mostrando ficha
+    #printando informações
     print("\n" + "="*50)
     print("PERSONAGEM CRIADO COM SUCESSO!")
     personagem.printf()
