@@ -1,4 +1,4 @@
-from Classico import classico
+from Classico import classico 
 from Aventureiro import aventureiro  
 from Heroico import heroico          
 
@@ -22,14 +22,7 @@ while not acess:
 if esc == 1:
     classico()
 elif esc == 2:
-    print("Modo Aventureiro em desenvolvimento...")
     aventureiro()
 elif esc == 3:
-    print("Modo Heróico em desenvolvimento...")
     heroico()
-
-
-
-
-
 
