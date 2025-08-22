@@ -5,7 +5,7 @@ class Personagem:
         self.nome = nome
         self.classe = classe
         self.forca = forca
-        self.destreza = des
+        self.destreza = des 
         self.constituicao = con
         self.inteligencia = int
         self.sabedoria = sab
@@ -14,15 +14,15 @@ class Personagem:
     def printf(self):
         """Mostra todas as informações do personagem"""
         print("\n" + "═" * 80)
-        print(f"🎭 FICHA DO PERSONAGEM - {self.nome.upper()}")
+        print(f"FICHA DO PERSONAGEM - {self.nome.upper()}")
         print("═" * 80)
-        print(f"🏷️  Classe: {self.classe}")
-        print(f"💪 Força: {self.forca}")
-        print(f"🎯 Destreza: {self.destreza}")
-        print(f"❤️  Constituição: {self.constituicao}")
-        print(f"🧠 Inteligência: {self.inteligencia}")
-        print(f"📚 Sabedoria: {self.sabedoria}")
-        print(f"✨ Carisma: {self.carisma}")
+        print(f"Classe: {self.classe}")
+        print(f"Força: {self.forca}")
+        print(f"Destreza: {self.destreza}")
+        print(f"Constituição: {self.constituicao}")
+        print(f"Inteligência: {self.inteligencia}")
+        print(f"Sabedoria: {self.sabedoria}")
+        print(f"Carisma: {self.carisma}")
         print("═" * 80)
 
 def dado():
