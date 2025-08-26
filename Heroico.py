@@ -1,4 +1,5 @@
-from geral import Personagem, dado
+from geral import Personagem, dado, race, escRaca
+from Classes import esClasse, classe
 
 def heroico():
     print("\n" + "═" * 80)
@@ -8,7 +9,12 @@ def heroico():
     print("\nVamos criar seu PERSONAGEM!")
     
     nome = input("\nDigite um nome: ")
-    classe = input("Digite a classe: ")
+    print("\n" + "═" * 80)
+
+    raca_val, mov_val, infra_val, alin_val, hab_val = escRaca()
+    class_nome, class_hab = esClasse()
+
+    #classe = input("Digite a classe: ")
     
     atributos = {
         'forca': None,
@@ -27,7 +33,7 @@ def heroico():
         resultados.append(resultado)
         print(f"Rolagem {i+1}: {resultado}")
     
-    print(f"\n🎲 Resultados: {resultados}")
+    print(f"\n Resultados: {resultados}")
     
     while len(atributos_escolhidos) < 6:
         print(f"\nResultados disponíveis: {resultados}")
@@ -119,7 +125,8 @@ def heroico():
     
     personagem = Personagem(
         nome=nome,
-        classe=classe,
+        classe=None,
+        race = None,
         forca=atributos['forca'],
         des=atributos['destreza'],
         con=atributos['constituicao'],
@@ -127,6 +134,10 @@ def heroico():
         sab=atributos['sabedoria'],
         car=atributos['carisma']
     )
+
+    race(personagem, raca_val, mov_val, infra_val, alin_val, hab_val)
+    classe(personagem, class_nome, class_hab)
+
     
     print("\n" + "═" * 80)
     print("PERSONAGEM HERÓICO CRIADO COM SUCESSO!")
