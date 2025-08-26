@@ -8,7 +8,7 @@ print("\n" + "═" * 80)
 print("---------------OLD DRAGON RPG---------------")
 print("═" * 80)
 
-while not acess:
+while not acess: 
     try:
         esc = int(input("\nESCOLHA UM MODO DE JOGO!\n1- Clássico\n2- Aventureiro\n3- Heróico\nSua escolha: "))
          
