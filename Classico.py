@@ -1,5 +1,4 @@
-from geral import Personagem, dado, race, escRaca
-from Classes import classe, esClasse
+from geral import Personagem, dado
 
 """
 ATRIBUTOS:
@@ -12,32 +11,31 @@ CAR = CARISMA;
 """
 
 def classico():
-    print("\n" + "═" * 80)
-    print("---------------OLD DRAGON RPG (CLÁSSICO)---------------")
-    print("═" * 80)
+    print("\n\n\n------ OLD DRAGON RPG (CLASSICO) ------")
     print("\nVamos criar seu PERSONAGEM!")
     
     nome = input("\nDigite um nome: ")
-    print("\n" + "═" * 80)
-    raca_val, mov_val, infra_val, alin_val, hab_val = escRaca()
-    class_nome, class_hab = esClasse()
-
-    #classe = raca = input("Escolha sua Raça\n1- Humano\n2- Elfo \n3- Anão\n4- Halfling\n5- Gnomo\n7- Meio-Elfo\nSua escolha: ") 
+    classe = input("Digite a classe: ") #CLASSE APENAS COMO DEMONSTRAÇÃO
     
-    
-    #rola o dado
+    #sorteia
+    print("\nRolando atributos...")
+    print("Força:")
     forca_val = dado()
+    print("Destreza:")
     des_val = dado()
+    print("Constituição:")
     con_val = dado()
+    print("Inteligência:")
     inte_val = dado()
+    print("Sabedoria:")
     sab_val = dado()
+    print("Carisma:")
     car_val = dado()
-
+    
     #Criando personagem
     personagem = Personagem(
         nome=nome,
-        classe= None,
-        race = None,
+        classe=classe,
         forca=forca_val,
         des=des_val,
         con=con_val,
@@ -46,9 +44,6 @@ def classico():
         car=car_val
     )
     
-    race(personagem, raca_val, mov_val, infra_val, alin_val, hab_val)
-    classe(personagem, class_nome, class_hab)
-
     #printando informações
     print("\n" + "="*50)
     print("PERSONAGEM CRIADO COM SUCESSO!")
