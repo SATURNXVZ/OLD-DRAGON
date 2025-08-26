@@ -1,17 +1,14 @@
-from geral import Personagem, dado, escRaca, race
-from Classes import esClasse, classe
+from geral import Personagem, dado
 
 def aventureiro(): 
     print("\n" + "═" * 80)
-    print("---------------OLD DRAGON RPG (AVENTUREIRO)---------------")
+    print("------ OLD DRAGON RPG (AVENTUREIRO) ------")
     print("═" * 80)
+
     print("\nVamos criar seu PERSONAGEM!")
     
     nome = input("\nDigite um nome: ")
-    print("\n" + "═" * 80)
-    
-    raca_val, mov_val, infra_val, alin_val, hab_val = escRaca()
-    class_nome, class_hab = esClasse()
+    classe = input("Digite a classe: ")
     
     # Inicializa
     atributos = {
@@ -25,7 +22,7 @@ def aventureiro():
     
     atributos_escolhidos = []
     
-    print("\n" + "═" * 80)
+    print("\nRolando atributos...")
     
     while len(atributos_escolhidos) < 6:
         soma = dado()
@@ -108,8 +105,7 @@ def aventureiro():
     # Criando personagem
     personagem = Personagem(
         nome=nome,
-        classe= None,
-        race = None,
+        classe=classe,
         forca=atributos['forca'],
         des=atributos['destreza'],
         con=atributos['constituicao'],
@@ -118,10 +114,6 @@ def aventureiro():
         car=atributos['carisma']
     )
     
-    race(personagem, raca_val, mov_val, infra_val, alin_val, hab_val)
-    classe(personagem, class_nome, class_hab)
-
-
     # Mostrando ficha
     print("\n" + "═" * 80)
     print(" PERSONAGEM CRIADO COM SUCESSO!")
